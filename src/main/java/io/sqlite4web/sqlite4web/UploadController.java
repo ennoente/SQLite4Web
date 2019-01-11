@@ -3,36 +3,36 @@ package io.sqlite4web.sqlite4web;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.boot.jackson.JsonObjectDeserializer;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.xml.bind.DatatypeConverter;
+import javax.xml.ws.Response;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.*;
-import java.net.ConnectException;
-import java.nio.*;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.sql.*;
 import java.util.Random;
 
 @CrossOrigin(origins = "*")
 @RestController
-public class RestControlling {
+public class UploadController {
     final char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890".toCharArray();
     private Random random = new Random();
 
     private Connection mConnection;
-    private String mTableName;
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/api", method = RequestMethod.GET)
+    public String ui(@RequestParam String dbToken) {
+
+        String path = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases" + File.separator + dbToken;
+        return constructJSON(path, dbToken).toString();
+    }
 
 
 
@@ -45,23 +45,31 @@ public class RestControlling {
      *
      * @return The JSON parsed from the database file
      */
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public String uploadFile (
             @RequestParam("file") MultipartFile file) {
         System.out.println(file.getName());
         System.out.println(file.getOriginalFilename());
+        String filename = file.getOriginalFilename();
+        String dbToken;
         try {
             System.out.println(file.getBytes().length);
 
             byte[] tokenBytes = new byte[8];
-            String dbToken = DatatypeConverter.printHexBinary(tokenBytes);
+            random.nextBytes(tokenBytes);
+            dbToken = DatatypeConverter.printHexBinary(tokenBytes);
             System.out.println("New Token: '" + dbToken + "'");
 
-            String path = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases" + File.separator + dbToken + file.getOriginalFilename();
+            String fileExtension = filename.substring(filename.lastIndexOf("."));
+
+            dbToken += fileExtension;
+
+            String path = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases" + File.separator + dbToken;
 
             System.out.println(path);
-            File f = new File("New path: '" + path + "'");
+            File f = new File(path);
             f.createNewFile();
 
             BufferedOutputStream bufferedOut = new BufferedOutputStream(new FileOutputStream(f));
@@ -70,8 +78,19 @@ public class RestControlling {
             bufferedOut.close();
             System.out.println("Finished saving the file");
 
-            System.out.println(constructJSON(path).toString(4));
-            return constructJSON(path).toString();
+            JSONObject response = new JSONObject();
+            response.put("dbToken", dbToken);
+
+            return response.toString();
+
+            //HttpHeaders headers = new HttpHeaders();
+            //headers.add("Location", "http://localhost:8080?dbToken=" + dbToken);
+
+            //ResponseEntity response = new ResponseEntity(headers, HttpStatus.PERMANENT_REDIRECT);
+            //return response;
+
+            //System.out.println(constructJSON(path, dbToken).toString(4));
+            //return constructJSON(path, dbToken).toString();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,12 +102,8 @@ public class RestControlling {
         object.put("Greeting", "Formal Greeting with friendly handshake");
         object.put("Fehler", "Oh je; da ist wohl was schief gelaufen. Dieses JSON schickt die API immer wenn was nich so lief :(");
 
+        //return new ResponseEntity(HttpStatus.BAD_REQUEST);
         return object.toString();
-    }
-
-    @RequestMapping(value = "/update/cell", method = RequestMethod.PATCH)
-    public ResponseEntity updateCell() {
-        return new ResponseEntity(HttpStatus.BAD_GATEWAY);
     }
 
 
@@ -117,10 +132,11 @@ public class RestControlling {
      * @param path The DB file's path
      * @return The JSON containing metadata about and all data of the database file.
      */
-    private JSONObject constructJSON(String path) {
+    private JSONObject constructJSON(String path, String dbToken) {
         JSONObject container = new JSONObject();
         JSONObject metaData = new JSONObject();
         JSONArray columnNames = new JSONArray();
+        JSONArray columnDataTypes = new JSONArray();
         JSONArray table = new JSONArray();
 
         try {
@@ -137,6 +153,7 @@ public class RestControlling {
                 System.out.println("(" + i + ") " + md.getColumnName(i));
                 //metaData.put(md.getColumnName(i));
                 columnNames.put(md.getColumnName(i));
+                columnDataTypes.put(md.getColumnTypeName(i));
             }
             System.out.println("Done listing meta data - column names.");
 
@@ -185,31 +202,21 @@ public class RestControlling {
             if (primaryKeys != null && primaryKeys.next()) primaryKey = primaryKeys.getString("COLUMN_NAME");
 
             metaData.put("columnNames", columnNames);
+            metaData.put("columnDataTypes", columnDataTypes);
             metaData.put("primaryKey", primaryKey);
+            metaData.put("dbToken", dbToken);
+            metaData.put("tableName", getDatabaseTableName());
 
             container.put("metadata", metaData);
             container.put("data", table);
+
+            mConnection.close();
 
             return container;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
-    }
-
-
-    // Order:
-    // 1. Primary key
-    // 2. Complete row
-    // 3. Take the n'th row the client chose (later version, not yet)
-    @RequestMapping(value = "/update/cell", method = RequestMethod.POST)
-    public ResponseEntity updateCell(@RequestParam String primaryKey, @RequestBody JSONObject jsonBody) {
-        System.out.println("Primary key: '" + primaryKey + "'");
-        if (primaryKey != null) {
-            //mConnection.createStatement().execute("INSERT INTO " + getDatabaseTableName())
-        }
-
-        return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
     }
 
 
@@ -231,7 +238,6 @@ public class RestControlling {
 
             DatabaseMetaData md = mConnection.getMetaData();
             ResultSet rs = md.getTables(null, null, "%", null);
-            System.out.println("Tablename: '" + rs.getString(3) + "'");
             return rs.getString(3);
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,0 +1,84 @@
+
+REQUESTS
+
+
+
+/api/upload
+
+POST -> Spring Multipart file
+
+
+
+
+
+/api/update/cell
+
+HTTP - POST
+
+{
+	"dbToken": "ABC123",
+	"primaryKey": "value",
+	"tableName": "name",
+	"columnName": "value",
+	"newValue": "newValue",
+	"columnNames": [
+		"columnName1",
+		"columnName2"
+	],
+	"columnValues": [
+		"columnValue1",
+		"columnValue2"
+	],
+	"columnDataTypes": [
+	    "INTEGER",
+	    "VARCHAR"
+	]
+	
+}
+
+If the table does not have a primary key, the corresponsing JSON field is to be left out, so that its value is NULL.
+
+
+
+
+
+
+
+
+RESPONSE
+
+
+
+
+
+/api/upload
+
+{
+	"metadata" {
+		"columnNames": [
+			"columnName1",
+			"columnName2"
+		],
+		"columnDataTypes": [
+	        "INTEGER",
+	        "VARCHAR"
+	    ],
+		"primaryKey": "value",
+		"dbToken": "ABC123",
+		"tableName": "name"
+	},
+	"data" [
+		[
+			"value1",
+			"value2"
+		],
+		[
+			"value3",
+			"value4"
+		]
+	]
+}
+
+
+
+

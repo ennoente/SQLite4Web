@@ -42,6 +42,27 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web\..\..\..\..\..\..\..\databases\db2.sqlite</jdbc-url>
+      <explain-plan-config>
+        <provider>com.intellij.database.plan.db2.Db2ExplainPlanProvider</provider>
+      </explain-plan-config>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="90D55CC55C53E3C0.txt" uuid="f1cb74eb-4ba1-4a69-bf84-edc44a34209e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web\..\..\..\..\..\..\..\databases\90D55CC55C53E3C0.txt</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="B5F3B573AC1D6F4B.txt" uuid="2a47081a-be9a-4f19-afba-da1982ce38f7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web\..\..\..\..\..\..\..\databases\B5F3B573AC1D6F4B.txt</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>
