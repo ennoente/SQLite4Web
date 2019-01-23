@@ -16,7 +16,7 @@ import java.sql.*;
 public class CellManipulationController {
     private static final String BASE_DIR = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases";
 
-    private Connection mConnection;
+    //private Connection mConnection;
 
 
 
@@ -41,7 +41,7 @@ public class CellManipulationController {
         JSONArray columnValues = jsonBody.getJSONArray("columnValues");
         JSONArray columnDataTypes = jsonBody.getJSONArray("columnDataTypes");
 
-        mConnection = DriverManager.getConnection("jdbc:sqlite:" + BASE_DIR + File.separator + dbToken);
+        Connection mConnection = DriverManager.getConnection("jdbc:sqlite:" + BASE_DIR + File.separator + dbToken);
 
         System.out.println(jsonBody.toString(4));
 
@@ -52,18 +52,18 @@ public class CellManipulationController {
 
 
         for (int i = 0; i < columnNames.length(); i++) {
-            valuesCommandBuilder.append("'");
+            valuesCommandBuilder.append("\"");
             valuesCommandBuilder.append(columnNames.get(i).toString());
-            valuesCommandBuilder.append("'");
+            valuesCommandBuilder.append("\"");
 
             valuesCommandBuilder.append(" IS ");
 
-            if (isStringBasedDataType(columnDataTypes.get(i).toString()))
+           // if (isStringBasedDataType(columnDataTypes.get(i).toString()))
                 valuesCommandBuilder.append("'");
 
             valuesCommandBuilder.append(columnValues.get(i).toString());
 
-            if (isStringBasedDataType(columnDataTypes.get(i).toString()))
+            //if (isStringBasedDataType(columnDataTypes.get(i).toString()))
                 valuesCommandBuilder.append("'");
 
             if (i < columnNames.length() - 1) valuesCommandBuilder.append(" AND ");
@@ -79,7 +79,7 @@ public class CellManipulationController {
 
 
         if (primaryKey != null && !primaryKey.equalsIgnoreCase("null")) {
-            System.out.println("Primary Key is NOT null! Updating by primary key...");
+            System.out.println("Primary Key is not null! Updating by primary key...");
             //mConnection.createStatement().execute("UPDATE " + tableName +
             //        " VALUES (" + valuesCommandBuilder + ")" +
             //        " WHERE " + primaryKey + " IS " + primaryKeyValue);
@@ -87,11 +87,12 @@ public class CellManipulationController {
                     " SET '" + columnName + "'=" + newValue +
                     " WHERE " + primaryKey + " IS " + primaryKeyValue);
         } else {
+            System.out.println("Primary Key is null! Updating by row...");
             // primary key is null
             String condition = valuesCommandBuilder.toString();
 
             String updateQuery = "UPDATE " + tableName +
-                    " SET '" + columnName + "'=" + "'" + newValue + "'" +
+                    " SET \"" + columnName + "\"=" + "'" + newValue + "'" +
                     " WHERE " + condition +
                     ";";
 
@@ -99,18 +100,10 @@ public class CellManipulationController {
 
             success = mConnection.createStatement().execute(updateQuery);
 
-
+            System.out.println("returns: " + success);
         }
         mConnection.close();
-        return new ResponseEntity(HttpStatus.OK);
-        //if (success) {
-        //    System.out.println("Closed connection. Returning HTTP OK");
-        //    return new ResponseEntity(HttpStatus.OK);
-        //} else {
-        //    System.out.println("Closed connection. Returning HTTP FAIL");
-        //    return ResponseEntity.status(HttpStatus.CONFLICT).body("Request itself was good, but the SQL query failed.");
-        //}
-        //return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
+        return ResponseEntity.status(200).body("Good Job! :)");
     }
 
     private boolean isStringBasedDataType(String datatype) {

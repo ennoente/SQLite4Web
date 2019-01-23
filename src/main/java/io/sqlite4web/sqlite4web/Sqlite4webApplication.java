@@ -2,11 +2,11 @@ package io.sqlite4web.sqlite4web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.File;
-import java.sql.*;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan("config")
+@ComponentScan("io.sqlite4web")
 public class Sqlite4webApplication {
 
 	public static void main(String[] args) {

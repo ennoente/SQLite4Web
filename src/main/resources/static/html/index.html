@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQLite 4 Web</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/button_styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/tokenbar_styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/hiddeninput_styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/table_styles.css">
+
+    <!-- lib -->
+    <script src="../js/lib/jquery-3.3.1.js"></script>
+
+
+    <script src="../js/upload-db.js"></script>
+    <script src="../js/night-mode-toggle.js"></script>
+    <script src="../js/cell-manipulation.js"></script>
+    <script src="../js/construct-table.js"></script>
+
+</head>
+<body>
+
+<input id="tokenBar" value="https://ennothoma.io">
+
+<!-- Upload file form (invisible) -->
+<input id="hiddenInput" type="file" name="uploadfile" accept="*"/>
+
+
+<button id="upload" class="button">Upload DB file</button>
+<button id="download" class="button" disabled>Download DB file</button>
+
+<!-- If the URL parameter 'dbToken' is not null nor undefined the script requests the DB JSON for the appropriate DB file -->
+<script>
+    let param = window.location.search.substring(1);
+
+    console.log("param: '" + param + "'");
+    if (param !== '' && param !== 'undefined') {
+        console.log("param value: '" + param.split("=")[1] + "'");
+
+        $.get("http://localhost:8080/api?dbToken=" + param, function(data, status) {
+            if (status === "success") {
+                let uploadResponse = JSON.parse(data);
+                retrieveResponseAndBuildTable(uploadResponse);
+            }
+        });
+    }
+</script>
+
+<!-- This script triggers the invisible file input click when the upload button is clicked -->
+<script>
+    $("#upload").click(function(){
+        $("#hiddenInput").click();
+});
+</script>
+
+
+<hr>
+
+<table id="table" style="width: 90%"></table>
+
+
+</body>
+</html>

@@ -21,18 +21,22 @@ import java.util.Random;
 @CrossOrigin(origins = "*")
 @RestController
 public class UploadController {
-    final char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890".toCharArray();
-    private Random random = new Random();
+    private final char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890".toCharArray();
 
+    private Random random = new Random();
     private Connection mConnection;
+
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/api", method = RequestMethod.GET)
     public String ui(@RequestParam String dbToken) {
+        dbToken = dbToken.replace("dbToken=", "");
+        System.out.println("Received API call for '/api' with the dbToken '" + dbToken + "'");
 
         String path = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases" + File.separator + dbToken;
         return constructJSON(path, dbToken).toString();
     }
+
 
 
 
@@ -46,7 +50,7 @@ public class UploadController {
      * @return The JSON parsed from the database file
      */
     @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/upload", method = RequestMethod.POST)
     @ResponseBody
     public String uploadFile (
             @RequestParam("file") MultipartFile file) {

@@ -1,0 +1,19 @@
+#tokenBar {
+    /* position */
+    position: absolute;
+    left: 3%;
+    top: 3%;
+
+    /* font */
+    font-family: "Calibri", Times, serif;
+    font-size: 1.1vw;
+
+    /* colors */
+    background-color: #008CBA;
+    color: #ffffff;
+    border-color: black;
+
+    /* size */
+    width: 35%;
+    height: 2.5vw;
+}

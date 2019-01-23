@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3895e7fc-84f4-4efb-84ff-2d4251036e94" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/API.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_1_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/config/WebConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/button_styles.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/hiddeninput_styles.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/table_styles.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/tokenbar_styles.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/html/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/cell-manipulation.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/construct-table.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/lib/jquery-3.3.1.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/night-mode-toggle.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/upload-db.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/RestControlling.java" afterPath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/sqlite4web.iml" afterPath="$PROJECT_DIR$/sqlite4web.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java" afterPath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java" afterPath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +33,12 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sqlite4web$Sqlite4webApplication.coverage" NAME="Sqlite4webApplication Coverage Results" MODIFIED="1547835574862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -34,52 +56,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Sqlite4webApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java">
+      <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="2622">
+              <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1547919932240" expanded="true" signature="5180:5194" ph="SELECT * FRO... missingValue" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload-db.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/upload-db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java">
+      <file leaf-file-name="cell-manipulation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/cell-manipulation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="6194">
+              <caret line="163" column="72" lean-forward="false" selection-start-line="163" selection-start-column="72" selection-end-line="163" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="API.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2014">
+              <caret line="53" column="4" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CellManipulationController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="84" column="73" lean-forward="true" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
+                <marker date="1548188622650" expanded="true" signature="3153:3154" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3153:3202" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3153:3231" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3153:3264" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3153:3265" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3153:3286" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3153:3287" ph="INSERT INTO missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3360:3367" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3360:3408" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3360:3409" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3360:3430" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3360:3473" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3360:3494" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3743:3816" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3743:3870" ph="UPDATE missingValue... " />
+                <marker date="1548188622650" expanded="true" signature="3743:3908" ph="UPDATE missingValue... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CellManipulationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ef92d26a-0fdd-4a46-82ee-490275957e46/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="104" column="49" lean-forward="true" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1547138152109" expanded="true" signature="3134:3135" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3134:3183" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3134:3212" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3134:3245" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3134:3246" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3134:3267" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3134:3268" ph="INSERT INTO missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3341:3348" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3341:3389" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3341:3390" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3341:3411" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3341:3454" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3341:3475" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3649:3720" ph="UPDATE missingValue... " />
-                <marker date="1547138152109" expanded="true" signature="3649:3774" ph="UPDATE missingValue... " />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c1030fb4-bb72-4162-8304-5843aabbe8e1/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,78 +162,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="12540">
               <caret line="353" column="12" lean-forward="false" selection-start-line="353" selection-start-column="12" selection-end-line="353" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2a47081a-be9a-4f19-afba-da1982ce38f7/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="166" lean-forward="false" selection-start-line="0" selection-start-column="166" selection-end-line="0" selection-end-column="166" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Types.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/sql/Types.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9956">
-              <caret line="285" column="28" lean-forward="false" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="API.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/API.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2432">
-              <caret line="64" column="10" lean-forward="false" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationFilterChain.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.13/tomcat-embed-core-9.0.13.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3610">
-              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-              <folding>
-                <marker date="1545980573206" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1545980573206" expanded="false" signature="148:838" ph="..." />
-                <marker date="1545980573206" expanded="true" signature="1502:1509" ph="{}" />
-                <marker date="1545980573206" expanded="true" signature="1623:2724" ph="{...}" />
-                <marker date="1545980573206" expanded="false" signature="1831:1947" ph="run() → {" />
-                <marker date="1545980573206" expanded="false" signature="2081:2104" ph="}" />
-                <marker date="1545980573206" expanded="true" signature="2847:5638" ph="{...}" />
-                <marker date="1545980573206" expanded="false" signature="5697:5708" ph=" { " />
-                <marker date="1545980573206" expanded="false" signature="5757:5763" ph=" }" />
-                <marker date="1545980573206" expanded="false" signature="5824:5835" ph=" { " />
-                <marker date="1545980573206" expanded="false" signature="5886:5892" ph=" }" />
-                <marker date="1545980573206" expanded="true" signature="5951:6540" ph="{...}" />
-                <marker date="1545980573206" expanded="true" signature="6561:6771" ph="{...}" />
-                <marker date="1545980573206" expanded="false" signature="6789:6800" ph=" { " />
-                <marker date="1545980573206" expanded="false" signature="6813:6819" ph=" }" />
-                <marker date="1545980573206" expanded="false" signature="6857:6868" ph=" { " />
-                <marker date="1545980573206" expanded="false" signature="6891:6897" ph=" }" />
-                <marker date="1545980573206" expanded="false" signature="6961:6972" ph=" { " />
-                <marker date="1545980573206" expanded="false" signature="7021:7027" ph=" }" />
-                <marker date="1545980573206" expanded="true" signature="7085:7361" ph="{...}" />
-                <marker date="1545980573206" expanded="true" signature="7374:7906" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -184,6 +185,11 @@
       <find>DriverMana</find>
       <find>columnNames</find>
       <find>constructJson</find>
+      <find>window.location.replace</find>
+      <find>get(&quot;</find>
+      <find>/upload</find>
+      <find>redirect</find>
+      <find>return</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,14 +207,23 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cf84cfef-d905-4b73-a9e0-bdb396e1f17f/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/293160bc-6463-4b91-a8aa-3bcb0cbb26a6/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d90c49a3-bf22-4858-b0d0-0322f559c2f6/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0b602b37-9f3d-4c3b-8a0a-364491ee57d3/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/RestControlling.java" />
         <option value="$PROJECT_DIR$/API.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f1cb74eb-4ba1-4a69-bf84-edc44a34209e/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2a47081a-be9a-4f19-afba-da1982ce38f7/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/button_styles.css" />
+        <option value="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/html/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/cell-manipulation.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/upload-db.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c1030fb4-bb72-4162-8304-5843aabbe8e1/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ef92d26a-0fdd-4a46-82ee-490275957e46/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java" />
       </list>
     </option>
   </component>
@@ -226,9 +241,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="700" />
-    <option name="height" value="880" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -246,9 +261,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,6 +294,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqlite4web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SQLite4Web-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sqlite4web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -289,19 +311,55 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sqlite4web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SQLite4Web-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqlite4web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SQLite4Web-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqlite4web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SQLite4Web-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqlite4web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SQLite4Web-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../databases/B5F3B573AC1D6F4B.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../databases/01202CD775636AED.txt" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
@@ -311,6 +369,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Enno\SpringProjects\SQLite4Web-Server\src\main\resources\static" />
       <recent name="C:\Users\Enno\SpringProjects\SQLite4Web-Server" />
     </key>
   </component>
@@ -436,15 +495,24 @@
       <workItem from="1546969665393" duration="746000" />
       <workItem from="1546982580101" duration="1229000" />
       <workItem from="1547133621673" duration="4604000" />
-      <workItem from="1547215112956" duration="2687000" />
+      <workItem from="1547215112956" duration="2724000" />
+      <workItem from="1547293955677" duration="4989000" />
+      <workItem from="1547412830432" duration="597000" />
+      <workItem from="1547833548635" duration="2275000" />
+      <workItem from="1547835942914" duration="2052000" />
+      <workItem from="1547915780023" duration="4942000" />
+      <workItem from="1547934321164" duration="1509000" />
+      <workItem from="1548010527055" duration="1653000" />
+      <workItem from="1548187193384" duration="2003000" />
+      <workItem from="1548276036579" duration="604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49621000" />
+    <option name="totallyTimeSpent" value="70282000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
+    <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -458,16 +526,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296845" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41918868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28689885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32646492" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5131579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17109375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -476,44 +544,12 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296845" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296845" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41981748" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32646492" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5131579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -538,187 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38190">
           <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3078">
-          <caret line="93" column="28" lean-forward="true" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1547138152109" expanded="true" signature="3134:3135" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3183" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3212" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3245" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3246" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3267" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3268" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3348" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3389" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3390" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3411" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3454" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3475" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3720" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3774" ph="UPDATE missingValue... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6992">
-          <caret line="184" column="32" lean-forward="true" selection-start-line="184" selection-start-column="32" selection-end-line="184" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.13/tomcat-embed-core-9.0.13.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3610">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <marker date="1545980573206" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1545980573206" expanded="false" signature="148:838" ph="..." />
-            <marker date="1545980573206" expanded="true" signature="1502:1509" ph="{}" />
-            <marker date="1545980573206" expanded="true" signature="1623:2724" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="1831:1947" ph="run() → {" />
-            <marker date="1545980573206" expanded="false" signature="2081:2104" ph="}" />
-            <marker date="1545980573206" expanded="true" signature="2847:5638" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="5697:5708" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5757:5763" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="5824:5835" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5886:5892" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="5951:6540" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="6561:6771" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="6789:6800" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6813:6819" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6857:6868" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6891:6897" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6961:6972" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="7021:7027" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="7085:7361" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="7374:7906" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38190">
-          <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3534">
-          <caret line="93" column="28" lean-forward="true" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1547138152109" expanded="true" signature="3134:3135" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3183" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3212" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3245" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3246" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3267" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3268" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3348" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3389" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3390" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3411" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3454" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3475" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3720" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3774" ph="UPDATE missingValue... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.13/tomcat-embed-core-9.0.13.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3686">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <marker date="1545980573206" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1545980573206" expanded="false" signature="148:838" ph="..." />
-            <marker date="1545980573206" expanded="true" signature="1502:1509" ph="{}" />
-            <marker date="1545980573206" expanded="true" signature="1623:2724" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="1831:1947" ph="run() → {" />
-            <marker date="1545980573206" expanded="false" signature="2081:2104" ph="}" />
-            <marker date="1545980573206" expanded="true" signature="2847:5638" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="5697:5708" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5757:5763" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="5824:5835" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5886:5892" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="5951:6540" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="6561:6771" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="6789:6800" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6813:6819" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6857:6868" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6891:6897" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6961:6972" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="7021:7027" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="7085:7361" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="7374:7906" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38190">
-          <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,21 +583,22 @@
           <caret line="46" column="51" lean-forward="false" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1547138152109" expanded="true" signature="3134:3135" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3183" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3212" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3245" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3246" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3267" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3268" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3348" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3389" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3390" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3411" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3454" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3475" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3720" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3774" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3154" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3202" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3231" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3264" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3265" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3286" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3287" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3367" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3408" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3409" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3430" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3473" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3494" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3816" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3870" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3908" ph="UPDATE missingValue... " />
           </folding>
         </state>
       </provider>
@@ -761,7 +617,7 @@
           <caret line="116" column="36" lean-forward="false" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
+            <marker date="1547919932240" expanded="true" signature="5180:5194" ph="SELECT * FRO... missingValue" />
           </folding>
         </state>
       </provider>
@@ -770,29 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3686">
           <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <marker date="1545980573206" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1545980573206" expanded="false" signature="148:838" ph="..." />
-            <marker date="1545980573206" expanded="true" signature="1502:1509" ph="{}" />
-            <marker date="1545980573206" expanded="true" signature="1623:2724" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="1831:1947" ph="run() → {" />
-            <marker date="1545980573206" expanded="false" signature="2081:2104" ph="}" />
-            <marker date="1545980573206" expanded="true" signature="2847:5638" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="5697:5708" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5757:5763" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="5824:5835" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5886:5892" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="5951:6540" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="6561:6771" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="6789:6800" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6813:6819" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6857:6868" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6891:6897" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6961:6972" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="7021:7027" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="7085:7361" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="7374:7906" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -808,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38190">
           <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,21 +650,22 @@
           <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1547138152109" expanded="true" signature="3134:3135" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3183" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3212" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3245" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3246" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3267" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3268" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3348" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3389" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3390" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3411" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3454" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3475" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3720" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3774" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3154" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3202" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3231" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3264" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3265" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3286" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3287" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3367" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3408" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3409" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3430" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3473" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3494" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3816" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3870" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3908" ph="UPDATE missingValue... " />
           </folding>
         </state>
       </provider>
@@ -859,7 +692,7 @@
           <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
+            <marker date="1547919932240" expanded="true" signature="5180:5194" ph="SELECT * FRO... missingValue" />
           </folding>
         </state>
       </provider>
@@ -868,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38190">
           <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38190">
           <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,7 +733,7 @@
           <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
+            <marker date="1547919932240" expanded="true" signature="5180:5194" ph="SELECT * FRO... missingValue" />
           </folding>
         </state>
       </provider>
@@ -918,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36632">
           <caret line="1005" column="19" lean-forward="false" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,14 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,14 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b602b37-9f3d-4c3b-8a0a-364491ee57d3/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1001,49 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.13/tomcat-embed-core-9.0.13.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3610">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <marker date="1545980573206" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1545980573206" expanded="false" signature="148:838" ph="..." />
-            <marker date="1545980573206" expanded="true" signature="1502:1509" ph="{}" />
-            <marker date="1545980573206" expanded="true" signature="1623:2724" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="1831:1947" ph="run() → {" />
-            <marker date="1545980573206" expanded="false" signature="2081:2104" ph="}" />
-            <marker date="1545980573206" expanded="true" signature="2847:5638" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="5697:5708" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5757:5763" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="5824:5835" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="5886:5892" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="5951:6540" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="6561:6771" ph="{...}" />
-            <marker date="1545980573206" expanded="false" signature="6789:6800" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6813:6819" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6857:6868" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="6891:6897" ph=" }" />
-            <marker date="1545980573206" expanded="false" signature="6961:6972" ph=" { " />
-            <marker date="1545980573206" expanded="false" signature="7021:7027" ph=" }" />
-            <marker date="1545980573206" expanded="true" signature="7085:7361" ph="{...}" />
-            <marker date="1545980573206" expanded="true" signature="7374:7906" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/sql/Types.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9956">
           <caret line="285" column="28" lean-forward="false" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/API.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2432">
-          <caret line="64" column="10" lean-forward="false" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,6 +833,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="166" lean-forward="false" selection-start-line="0" selection-start-column="166" selection-end-line="0" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.3.RELEASE/spring-web-5.1.3.RELEASE.jar!/org/springframework/http/ResponseEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/table_styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.3.RELEASE/spring-webmvc-5.1.3.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/button_styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid9944.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1320">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/Sqlite4webApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2014">
+          <caret line="53" column="4" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1070,49 +927,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/cell-manipulation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="104" column="49" lean-forward="true" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1547138152109" expanded="true" signature="3134:3135" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3183" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3212" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3245" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3246" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3267" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3134:3268" ph="INSERT INTO missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3348" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3389" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3390" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3411" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3454" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3341:3475" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3720" ph="UPDATE missingValue... " />
-            <marker date="1547138152109" expanded="true" signature="3649:3774" ph="UPDATE missingValue... " />
-          </folding>
+        <state relative-caret-position="6194">
+          <caret line="163" column="72" lean-forward="false" selection-start-line="163" selection-start-column="72" selection-end-line="163" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.3.RELEASE/spring-web-5.1.3.RELEASE.jar!/org/springframework/http/ResponseEntity.class">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c1030fb4-bb72-4162-8304-5843aabbe8e1/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding>
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="76">
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/upload-db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.13/tomcat-embed-core-9.0.13.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ef92d26a-0fdd-4a46-82ee-490275957e46/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/UploadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="2622">
+          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1547218485051" expanded="true" signature="5020:5034" ph="SELECT * FRO... missingValue" />
+            <marker date="1547919932240" expanded="true" signature="5180:5194" ph="SELECT * FRO... missingValue" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web/CellManipulationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="84" column="73" lean-forward="true" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1548188622650" expanded="true" signature="3153:3154" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3202" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3231" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3264" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3265" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3286" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3153:3287" ph="INSERT INTO missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3367" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3408" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3409" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3430" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3473" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3360:3494" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3816" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3870" ph="UPDATE missingValue... " />
+            <marker date="1548188622650" expanded="true" signature="3743:3908" ph="UPDATE missingValue... " />
           </folding>
         </state>
       </provider>
