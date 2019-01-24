@@ -44,6 +44,11 @@ function addCellManipulation() {
         // ...
         let $closestTr = alreadySelectedCell.closest('tr');
 
+        // Clear the array from previous requests
+        columnValues = [
+
+        ];
+
         $closestTr.find("td").each(function() {
             console.log("cell text=" + $(this).text());
             columnValues.push(
