@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan("io.sqlite4web.sqlite4web.api")
 @ComponentScan("config")
 @ComponentScan("io.sqlite4web")
 public class Sqlite4webApplication {

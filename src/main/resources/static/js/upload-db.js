@@ -33,7 +33,7 @@ function uploadFile(file) {
         console.log("dbToken=" + uploadResponse["dbToken"]);
 
         window.location.replace("http://localhost:8080?dbToken=" + uploadResponse["dbToken"]);
-        apiRequest.open("GET", "http://localhost:8080/api?dbToken=" + uploadResponse["dbToken"]);
+        //apiRequest.open("GET", "http://localhost:8080/api?dbToken=" + uploadResponse["dbToken"]);
     };
 
     // Error callback
@@ -44,16 +44,6 @@ function uploadFile(file) {
     // Open connection and send
     uploadRequest.open("POST", "http://localhost:8080/api/upload");
     uploadRequest.send(formData);
-
-    let apiRequest = new XMLHttpRequest();
-    apiRequest.onload = function () {
-        let uploadResponse = JSON.parse(this.responseText);
-        retrieveResponseAndBuildTable(uploadResponse);
-    };
-
-    apiRequest.onerror = function() {
-        alert("Oh-Oh!");
-    }
 }
 
 function retrieveResponseAndBuildTable(uploadResponse) {

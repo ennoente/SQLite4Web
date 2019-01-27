@@ -1,5 +1,6 @@
 package io.sqlite4web.sqlite4web;
 
+import io.sqlite4web.sqlite4web.api.Constants;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +34,7 @@ public class UploadController {
         dbToken = dbToken.replace("dbToken=", "");
         System.out.println("Received API call for '/api' with the dbToken '" + dbToken + "'");
 
-        String path = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases" + File.separator + dbToken;
+        String path = Constants.BASE_DIR + File.separator + dbToken;
         return constructJSON(path, dbToken).toString();
     }
 

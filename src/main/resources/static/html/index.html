@@ -12,23 +12,23 @@
     <!-- lib -->
     <script src="../js/lib/jquery-3.3.1.js"></script>
 
-
     <script src="../js/upload-db.js"></script>
     <script src="../js/night-mode-toggle.js"></script>
     <script src="../js/cell-manipulation.js"></script>
     <script src="../js/construct-table.js"></script>
+    <script src="../js/download-db.js"></script>
 
 </head>
 <body>
 
-<input id="tokenBar" value="https://ennothoma.io">
+<input id="tokenBar" value="https://ennothoma.io" >
 
 <!-- Upload file form (invisible) -->
 <input id="hiddenInput" type="file" name="uploadfile" accept="*"/>
 
 
 <button id="upload" class="button">Upload DB file</button>
-<button id="download" class="button" disabled>Download DB file</button>
+<button id="download" class="button" onclick="download()" disabled>Download DB file</button>
 
 <!-- If the URL parameter 'dbToken' is not null nor undefined the script requests the DB JSON for the appropriate DB file -->
 <script>
@@ -41,6 +41,7 @@
         $.get("http://localhost:8080/api?dbToken=" + param, function(data, status) {
             if (status === "success") {
                 let uploadResponse = JSON.parse(data);
+                $('#download').attr('disabled', false);
                 retrieveResponseAndBuildTable(uploadResponse);
             }
         });
