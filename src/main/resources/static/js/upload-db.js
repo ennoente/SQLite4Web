@@ -29,10 +29,9 @@ function uploadFile(file) {
 
         console.log("Server response: ");
         console.log(uploadResponse);
-
         console.log("dbToken=" + uploadResponse["dbToken"]);
 
-        window.location.replace("http://localhost:8080?dbToken=" + uploadResponse["dbToken"]);
+        window.location.replace("/?dbToken=" + uploadResponse["dbToken"]);
         //apiRequest.open("GET", "http://localhost:8080/api?dbToken=" + uploadResponse["dbToken"]);
     };
 
@@ -42,7 +41,7 @@ function uploadFile(file) {
     };
 
     // Open connection and send
-    uploadRequest.open("POST", "http://localhost:8080/api/upload");
+    uploadRequest.open("POST", "/api/upload");
     uploadRequest.send(formData);
 }
 

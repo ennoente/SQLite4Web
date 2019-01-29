@@ -1,14 +1,12 @@
 package io.sqlite4web.sqlite4web.api;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 @CrossOrigin(origins = "*")
@@ -30,7 +28,7 @@ public class DownloadController {
         try {
             dbToken = dbToken.replace("dbToken=", "");
 
-            f = new File(Constants.BASE_DIR + File.separator + dbToken);
+            f = new File(Constants.DATABASE_DIR + File.separator + dbToken);
             fis = new FileInputStream(f);
             fileBytes = new byte[(int) f.length()];
 

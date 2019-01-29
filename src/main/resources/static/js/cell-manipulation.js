@@ -26,9 +26,6 @@ function addCellManipulation() {
         currentInput.closest("td").text(currentInput.val());
         currentInput.remove();
 
-        // For clarity
-        //let newInput = $("#input");
-
         // If another cell was already selected set its text to its original cell
         // since its change was not submitted
         if (alreadySelectedCell != null)
@@ -119,7 +116,7 @@ function updateCell() {
     alreadySelectedCell.text("" + newValue);
 
     // Send update request to server
-    let url = "http://localhost:8080/api/update/cell";
+    let url = "/api/update/cell";
 
 
     let request = new XMLHttpRequest();
@@ -144,7 +141,7 @@ function updateCell() {
     //    url += "?primaryKey=" + primaryKey;
     //}
 
-    request.open("POST", "http://localhost:8080/api/update/cell");
+    request.open("POST", "/api/update/cell");
 
     request.onload = function() {
         console.log("Success! :)");
@@ -160,7 +157,7 @@ function updateCell() {
 
 
     $.ajax({
-        url: 'http://localhost:8080/api/update/cell',
+        url: '/api/update/cell',
         type: 'POST',
         contentType: 'application/json',
         data: _requestbody,

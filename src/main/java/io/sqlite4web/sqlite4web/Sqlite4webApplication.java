@@ -1,5 +1,6 @@
 package io.sqlite4web.sqlite4web;
 
+import io.sqlite4web.sqlite4web.api.Constants;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
 public class Sqlite4webApplication {
 
 	public static void main(String[] args) {
+		setEnvVariables();
+
 		try {
 			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException e) {
@@ -18,6 +21,10 @@ public class Sqlite4webApplication {
 			System.exit(1);
 		}
 		SpringApplication.run(Sqlite4webApplication.class, args);
+	}
+
+	private static void setEnvVariables() {
+		System.setProperty("sqlite4web.dir", Constants.BASE_DIR);
 	}
 
 }

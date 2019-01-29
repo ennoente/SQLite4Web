@@ -1,7 +1,7 @@
 function download() {
     let downloadRequest = new XMLHttpRequest();
 
-    let url = "http://localhost:8080/api/download?dbToken=" + dbToken;
+    let url = "/api/download?dbToken=" + dbToken;
 
     console.log(url);
 

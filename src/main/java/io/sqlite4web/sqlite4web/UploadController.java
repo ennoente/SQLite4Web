@@ -4,19 +4,16 @@ import io.sqlite4web.sqlite4web.api.Constants;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.xml.bind.DatatypeConverter;
-import javax.xml.ws.Response;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.*;
+import java.util.Objects;
 import java.util.Random;
 
 @CrossOrigin(origins = "*")
@@ -34,11 +31,9 @@ public class UploadController {
         dbToken = dbToken.replace("dbToken=", "");
         System.out.println("Received API call for '/api' with the dbToken '" + dbToken + "'");
 
-        String path = Constants.BASE_DIR + File.separator + dbToken;
-        return constructJSON(path, dbToken).toString();
+        String path = Constants.DATABASE_DIR + File.separator + dbToken;
+        return Objects.requireNonNull(constructJSON(path, dbToken)).toString();
     }
-
-
 
 
     /**
@@ -71,7 +66,7 @@ public class UploadController {
 
             dbToken += fileExtension;
 
-            String path = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases" + File.separator + dbToken;
+            String path = Constants.DATABASE_DIR + File.separator + dbToken;
 
             System.out.println(path);
             File f = new File(path);
@@ -88,27 +83,10 @@ public class UploadController {
 
             return response.toString();
 
-            //HttpHeaders headers = new HttpHeaders();
-            //headers.add("Location", "http://localhost:8080?dbToken=" + dbToken);
-
-            //ResponseEntity response = new ResponseEntity(headers, HttpStatus.PERMANENT_REDIRECT);
-            //return response;
-
-            //System.out.println(constructJSON(path, dbToken).toString(4));
-            //return constructJSON(path, dbToken).toString();
-
         } catch (IOException e) {
             e.printStackTrace();
+            return "Bad Request" + File.separator + e.toString();
         }
-
-
-        JSONObject object = new JSONObject();
-        object.put("key1", "Schlüssel 1");
-        object.put("Greeting", "Formal Greeting with friendly handshake");
-        object.put("Fehler", "Oh je; da ist wohl was schief gelaufen. Dieses JSON schickt die API immer wenn was nich so lief :(");
-
-        //return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        return object.toString();
     }
 
 
@@ -143,66 +121,33 @@ public class UploadController {
         JSONArray columnNames = new JSONArray();
         JSONArray columnDataTypes = new JSONArray();
         JSONArray table = new JSONArray();
+        JSONArray row;
+
+        ResultSet tableData;
+        DatabaseMetaData dbMetaData;
+        ResultSetMetaData tableMetaData;
 
         try {
             mConnection = DriverManager.getConnection("jdbc:sqlite:" + path);
 
-            ResultSet rs = mConnection.createStatement().executeQuery("SELECT * FROM " + getDatabaseTableName());
+            tableData = mConnection.createStatement().executeQuery("SELECT * FROM " + getDatabaseTableName());
 
-            DatabaseMetaData dbmd = mConnection.getMetaData();
-            ResultSetMetaData md = rs.getMetaData();
+            dbMetaData = mConnection.getMetaData();
+            tableMetaData = tableData.getMetaData();
 
-            // Construct meta data JSONArray
-            System.out.println("Listing meta data - column names...");
-            for (int i = 1; i <= md.getColumnCount(); i++) {
-                System.out.println("(" + i + ") " + md.getColumnName(i));
-                //metaData.put(md.getColumnName(i));
-                columnNames.put(md.getColumnName(i));
-                columnDataTypes.put(md.getColumnTypeName(i));
+
+            for (int i = 1; i <= tableMetaData.getColumnCount(); i++) {
+                columnNames.put(tableMetaData.getColumnName(i));
+                columnDataTypes.put(tableMetaData.getColumnTypeName(i));
             }
-            System.out.println("Done listing meta data - column names.");
 
-            JSONArray row;
-            while (rs.next()) {
-                row = new JSONArray();
-                System.out.println(rs.getString(1));
-
-                for (int i = 1; i <= md.getColumnCount(); i++) {
-
-                    if (md.getColumnType(i) == java.sql.Types.ARRAY) {
-                        row.put(rs.getArray(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.BIGINT) {
-                        row.put(rs.getInt(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.BOOLEAN) {
-                        row.put(rs.getBoolean(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.BLOB) {
-                        row.put(rs.getBlob(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.DOUBLE) {
-                        row.put(rs.getDouble(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.FLOAT) {
-                        row.put(rs.getFloat(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.INTEGER) {
-                        row.put(rs.getInt(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.NVARCHAR) {
-                        row.put(rs.getNString(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.VARCHAR) {
-                        row.put(rs.getString(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.TINYINT) {
-                        row.put(rs.getInt(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.SMALLINT) {
-                        row.put(rs.getInt(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.DATE) {
-                        row.put(rs.getDate(i));
-                    } else if (md.getColumnType(i) == java.sql.Types.TIMESTAMP) {
-                        row.put(rs.getTimestamp(i));
-                    } else {
-                        row.put(rs.getObject(i));
-                    }
-                }
+            while (tableData.next()) {
+                row = convertResultSetToJSON(tableData, tableMetaData);
+                //System.out.println(tableData.getString(1));
                 table.put(row);
             }
 
-            ResultSet primaryKeys = dbmd.getPrimaryKeys(null, null, getDatabaseTableName());
+            ResultSet primaryKeys = dbMetaData.getPrimaryKeys(null, null, getDatabaseTableName());
             String primaryKey = "null";
             if (primaryKeys != null && primaryKeys.next()) primaryKey = primaryKeys.getString("COLUMN_NAME");
 
@@ -224,18 +169,48 @@ public class UploadController {
         }
     }
 
+    private JSONArray convertResultSetToJSON(ResultSet rs, ResultSetMetaData md) {
+        JSONArray row = new JSONArray();
 
+        try {
+            for (int i = 1; i <= md.getColumnCount(); i++) {
 
-    private static JSONArray convert(ResultSet rs) throws SQLException, JSONException {
-        JSONArray array = new JSONArray();
-        JSONArray columnNames = new JSONArray();
-        ResultSetMetaData md = rs.getMetaData();
-
-        for (int i = 0; i < md.getColumnCount(); i++) {
-            columnNames.put(md.getColumnName(i));
+                if (md.getColumnType(i) == java.sql.Types.ARRAY) {
+                    row.put(rs.getArray(i));
+                } else if (md.getColumnType(i) == java.sql.Types.BIGINT) {
+                    row.put(rs.getInt(i));
+                } else if (md.getColumnType(i) == java.sql.Types.BOOLEAN) {
+                    row.put(rs.getBoolean(i));
+                } else if (md.getColumnType(i) == java.sql.Types.BLOB) {
+                    row.put(rs.getBlob(i));
+                } else if (md.getColumnType(i) == java.sql.Types.DOUBLE) {
+                    row.put(rs.getDouble(i));
+                } else if (md.getColumnType(i) == java.sql.Types.FLOAT) {
+                    row.put(rs.getFloat(i));
+                } else if (md.getColumnType(i) == java.sql.Types.INTEGER) {
+                    row.put(rs.getInt(i));
+                } else if (md.getColumnType(i) == java.sql.Types.NVARCHAR) {
+                    row.put(rs.getNString(i));
+                } else if (md.getColumnType(i) == java.sql.Types.VARCHAR) {
+                    row.put(rs.getString(i));
+                } else if (md.getColumnType(i) == java.sql.Types.TINYINT) {
+                    row.put(rs.getInt(i));
+                } else if (md.getColumnType(i) == java.sql.Types.SMALLINT) {
+                    row.put(rs.getInt(i));
+                } else if (md.getColumnType(i) == java.sql.Types.DATE) {
+                    row.put(rs.getDate(i));
+                } else if (md.getColumnType(i) == java.sql.Types.TIMESTAMP) {
+                    row.put(rs.getTimestamp(i));
+                } else {
+                    row.put(rs.getObject(i));
+                }
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
         }
-        return array;
+        return row;
     }
+
 
     public String getDatabaseTableName() {
         try {
@@ -250,13 +225,4 @@ public class UploadController {
         return null;
     }
 
-    public String generateRandomString() {
-        String randomString = "";
-
-        for (int i = 0; i < 16; i++) {
-            randomString = randomString + chars[random.nextInt(chars.length)];
-        }
-
-        return randomString;
-    }
 }

@@ -38,7 +38,7 @@
     if (param !== '' && param !== 'undefined') {
         console.log("param value: '" + param.split("=")[1] + "'");
 
-        $.get("http://localhost:8080/api?dbToken=" + param, function(data, status) {
+        $.get("/api?dbToken=" + param, function(data, status) {
             if (status === "success") {
                 let uploadResponse = JSON.parse(data);
                 $('#download').attr('disabled', false);

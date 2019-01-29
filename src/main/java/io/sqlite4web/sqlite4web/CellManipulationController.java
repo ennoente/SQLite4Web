@@ -16,7 +16,7 @@ import java.sql.SQLException;
 @CrossOrigin(origins = "*")
 @RestController
 public class CellManipulationController {
-    //private static final String BASE_DIR = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases";
+    //private static final String DATABASE_DIR = System.getProperty("user.home") + File.separator + "SpringProjects" + File.separator + "databases";
 
     //private Connection mConnection;
 
@@ -43,7 +43,7 @@ public class CellManipulationController {
         JSONArray columnValues = jsonBody.getJSONArray("columnValues");
         JSONArray columnDataTypes = jsonBody.getJSONArray("columnDataTypes");
 
-        Connection mConnection = DriverManager.getConnection("jdbc:sqlite:" + Constants.BASE_DIR + File.separator + dbToken);
+        Connection mConnection = DriverManager.getConnection("jdbc:sqlite:" + Constants.DATABASE_DIR + File.separator + dbToken);
 
         System.out.println(jsonBody.toString(4));
 
