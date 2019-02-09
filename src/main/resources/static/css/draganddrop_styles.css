@@ -1,0 +1,11 @@
+#dropContainer {
+    position: relative;
+
+    width: 20vw;
+    height: 28vh;
+
+    margin-top: 50px;
+    margin-left: calc((100vw - 20vw) / 2);
+
+    border: 3px solid black;
+}

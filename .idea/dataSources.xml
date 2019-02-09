@@ -42,9 +42,6 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/java/io/sqlite4web/sqlite4web\..\..\..\..\..\..\..\databases\db2.sqlite</jdbc-url>
-      <explain-plan-config>
-        <provider>com.intellij.database.plan.db2.Db2ExplainPlanProvider</provider>
-      </explain-plan-config>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

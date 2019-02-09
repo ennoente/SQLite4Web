@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/tokenbar_styles.css">
     <link rel="stylesheet" type="text/css" href="../css/hiddeninput_styles.css">
     <link rel="stylesheet" type="text/css" href="../css/table_styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/draganddrop_styles.css">
 
     <!-- lib -->
     <script src="../js/lib/jquery-3.3.1.js"></script>
@@ -17,18 +18,33 @@
     <script src="../js/cell-manipulation.js"></script>
     <script src="../js/construct-table.js"></script>
     <script src="../js/download-db.js"></script>
+    <script src="../js/drag-n-drop.js"></script>
 
 </head>
 <body>
 
-<input id="tokenBar" value="https://ennothoma.io" >
+<div id="container">
 
-<!-- Upload file form (invisible) -->
-<input id="hiddenInput" type="file" name="uploadfile" accept="*"/>
+    <input id="tokenBar" value="https://ennothoma.io">
+
+    <!-- Upload file form (invisible) -->
+    <input id="hiddenInput" type="file" name="uploadfile" accept="*"/>
 
 
-<button id="upload" class="button">Upload DB file</button>
-<button id="download" class="button" onclick="download()" disabled>Download DB file</button>
+    <button id="upload" class="button">Upload DB file</button>
+    <button id="download" class="button" onclick="download()" disabled>Download DB file</button>
+
+
+    <hr>
+
+    <div id="dropContainer">Upload via Drag & Drop</div>
+
+    <table id="table" style="width: 90%"></table>
+
+</div>
+
+
+<script>dragAndDropInit()</script>
 
 <!-- If the URL parameter 'dbToken' is not null nor undefined the script requests the DB JSON for the appropriate DB file -->
 <script>
@@ -36,9 +52,12 @@
 
     console.log("param: '" + param + "'");
     if (param !== '' && param !== 'undefined') {
+        // Remove drag and drop container
+        $('#dropContainer').remove();
+
         console.log("param value: '" + param.split("=")[1] + "'");
 
-        $.get("/api?dbToken=" + param, function(data, status) {
+        $.get("/api?dbToken=" + param, function (data, status) {
             if (status === "success") {
                 let uploadResponse = JSON.parse(data);
                 $('#download').attr('disabled', false);
@@ -50,15 +69,10 @@
 
 <!-- This script triggers the invisible file input click when the upload button is clicked -->
 <script>
-    $("#upload").click(function(){
+    $("#upload").click(function () {
         $("#hiddenInput").click();
-});
+    });
 </script>
-
-
-<hr>
-
-<table id="table" style="width: 90%"></table>
 
 
 </body>

@@ -1,0 +1,30 @@
+{
+  "name": "sqlite4web",
+  "version": "1.2.0",
+  "description": "A web based user interface for SQLite databases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ennoente/SQLite4Web.git"
+  },
+  "keywords": [
+    "sqlite4web",
+    "spring",
+    "javascript",
+    "webapp"
+  ],
+  "author": "Enno Thoma",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ennoente/SQLite4Web/issues"
+  },
+  "homepage": "https://github.com/ennoente/SQLite4Web#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}

@@ -10,8 +10,6 @@
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-
 ### NetBeans ###
 /nbproject/private/
 /build/
@@ -19,3 +17,6 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Log files ###
+*.log

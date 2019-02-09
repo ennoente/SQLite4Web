@@ -50,6 +50,7 @@ public class UploadController {
     @ResponseBody
     public String uploadFile (
             @RequestParam("file") MultipartFile file) {
+        System.out.println("Saving new database file");
         System.out.println(file.getName());
         System.out.println(file.getOriginalFilename());
         String filename = file.getOriginalFilename();

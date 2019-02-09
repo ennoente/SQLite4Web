@@ -1,0 +1,17 @@
+1.0. Read table
+    - Upload table to server
+    - table is shown in UI as HTML table
+    - no cell manipulation or download feature/functionality
+    
+1.1. Read and Write table
+    - Upload table to server
+    - table is shown in UI as HTML table
+    - cell manipulation and download feature available
+    
+1.1.5. Add: Upload via file select or drag & drop
+    - Upload database via file select or drag and drop
+    
+    
+1.2. Create database with tables via UI
+    - How should the design for that look?
+    - How 

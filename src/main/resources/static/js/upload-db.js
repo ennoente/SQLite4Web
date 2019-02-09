@@ -6,7 +6,9 @@ var columnDataTypes;
 
 // Binds the @uploadFile function to file input's onChange-Event
 $(document).ready(function() {
-    $("#hiddenInput").on("change", uploadFile);
+    $("#hiddenInput").on("change", function() {
+        uploadFile($("#hiddenInput")[0].files[0]);
+    });
 });
 
 /**
@@ -14,11 +16,10 @@ $(document).ready(function() {
  * @param file The file to be sent to the server
  */
 function uploadFile(file) {
-    console.log("Uploading...");
-
     // Create FormData object carrying the file
     let formData = new FormData();
-    formData.append("file", ($("#hiddenInput"))[0].files[0]);
+
+    formData.append("file", file);
 
     let uploadRequest = new XMLHttpRequest();
 
@@ -32,7 +33,6 @@ function uploadFile(file) {
         console.log("dbToken=" + uploadResponse["dbToken"]);
 
         window.location.replace("/?dbToken=" + uploadResponse["dbToken"]);
-        //apiRequest.open("GET", "http://localhost:8080/api?dbToken=" + uploadResponse["dbToken"]);
     };
 
     // Error callback
