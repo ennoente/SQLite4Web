@@ -111,7 +111,6 @@ function updateCell() {
   const newValue = $('#input').val();
   // Update local table -- UI
   $('#input').closest('td').text($('#input').val());
-  // alreadySelectedCell.text($("#input").val());
   alreadySelectedCell.text(`${newValue}`);
 
   // Send update request to server
@@ -170,11 +169,6 @@ function updateCell() {
       console.log(data);
     },
   });
-
-  /*
-    request.send(JSON.stringify(requestBody));
-    */
-
 
   alreadySelectedCell = null;
 }

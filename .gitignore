@@ -1,6 +1,19 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+# Intellij #
+
+# Stuff from .idea directory
+.idea/workspace.xml
+.idea/dataSources
+.idea/codeStyles
+.idea/libraries
+
+# All .iml files
+.iml
+
+
+
 ### STS ###
 .apt_generated
 .classpath
@@ -18,5 +31,5 @@
 /nbdist/
 /.nb-gradle/
 
-### Log files ###
+#Log files
 *.log
