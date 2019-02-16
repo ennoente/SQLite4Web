@@ -1,11 +1,11 @@
 function download() {
-    let downloadRequest = new XMLHttpRequest();
+  const downloadRequest = new XMLHttpRequest();
 
-    let url = "/api/download?dbToken=" + dbToken;
+  const url = `/api/download?dbToken=${dbToken}`;
 
-    console.log(url);
+  console.log(url);
 
-    $.get(url, null);
+  $.get(url, null);
 
-    window.location.href = url;
+  window.location.href = url;
 }

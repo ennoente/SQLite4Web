@@ -1,30 +1,26 @@
 function constructTableFromResponse(table$, metadata, data, dataLength) {
-    // Construct table header row
-    let headerRow$ = $('<tr/>');
-    for (let i = 0; i < metadata.length; i++) {
-        let $header = $('<th/>');
-        $header.html(metadata[i]);
-        $header.addClass(i);
+  // Construct table header row
+  const headerRow$ = $('<tr/>');
+  for (let i = 0; i < metadata.length; i++) {
+    const $header = $('<th/>');
+    $header.html(metadata[i]);
+    $header.addClass(i);
 
-        headerRow$.append($header);
+    headerRow$.append($header);
+  }
+  table$.append(headerRow$);
 
-        //headerRow$.append($('<th/>').html(metadata[i]));
+  // Construct table data rows
+  for (let i = 0; i < dataLength; i++) {
+    const row$ = $('<tr/>');
+    const currentRow = data[i];
+    for (let j = 0; j < currentRow.length; j++) {
+      const $td = $('<td/>');
+      $td.html(currentRow[j]);
+      $td.addClass(i);
+
+      row$.append($td);
     }
-    table$.append(headerRow$);
-
-    // Construct table data rows
-    for (let i = 0; i < dataLength; i++) {
-        let row$ = $('<tr/>');
-        let currentRow = data[i];
-        for (let j = 0; j < currentRow.length; j++) {
-            let $td = $('<td/>');
-            $td.html(currentRow[j]);
-            $td.addClass(i);
-
-            row$.append($td);
-
-            //row$.append($('<td/>').html(currentRow[j]));
-        }
-        table$.append(row$);
-    }
+    table$.append(row$);
+  }
 }

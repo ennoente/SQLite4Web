@@ -1,4 +1,4 @@
-package io.sqlite4web.sqlite4web;
+package io.sqlite4web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

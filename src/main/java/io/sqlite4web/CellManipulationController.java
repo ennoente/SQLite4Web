@@ -1,6 +1,6 @@
-package io.sqlite4web.sqlite4web;
+package io.sqlite4web;
 
-import io.sqlite4web.sqlite4web.api.Constants;
+import io.sqlite4web.api.Constants;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;

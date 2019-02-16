@@ -37,7 +37,6 @@ function addCellManipulation() {
     alreadySelectedCell = clickedCell;
     originalText = clickedCell.text();
 
-    // ...
     const $closestTr = alreadySelectedCell.closest('tr');
 
     // Clear the array from previous requests
@@ -48,10 +47,10 @@ function addCellManipulation() {
     $closestTr.find('td').each(function () {
       console.log(`cell text=${$(this).text()}`);
       columnValues.push(
-        $(this).text(),
+        $(this).text()
       );
     });
-    // ...
+
 
     console.log(originalText);
     console.log(`column name: ${columnName}`);
@@ -63,11 +62,11 @@ function addCellManipulation() {
       input.focus();
     });
 
-    input.bind('enterKey', (e) => {
+    input.bind('enterKey', () => {
       updateCell();
     });
 
-    input.bind('escapeKey', (e) => {
+    input.bind('escapeKey', () => {
       removeInput();
     });
 

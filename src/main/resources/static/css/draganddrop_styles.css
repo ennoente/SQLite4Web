@@ -1,11 +1,25 @@
 #dropContainer {
-    position: relative;
-
     width: 20vw;
     height: 28vh;
 
+    position: relative;
     margin-top: 50px;
     margin-left: calc((100vw - 20vw) / 2);
 
+    display: block;
+
     border: 3px solid black;
+    font-family: "Calibri", Times, serif;
+    text-align: center;
+}
+
+#dropContainer img {
+    width: 15vw;
+    height: 15vw;
+
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
 }

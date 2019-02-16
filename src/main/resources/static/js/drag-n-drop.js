@@ -1,18 +1,17 @@
 function dragAndDropInit() {
-    let $dropzone = document.getElementById("dropContainer");
+  const $dropzone = document.getElementById('dropContainer');
 
-    $dropzone.addEventListener('dragover', function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'copy';
-    });
+  $dropzone.addEventListener('dragover', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+  });
 
-    $dropzone.addEventListener('drop', function (e) {
-        e.stopPropagation();
-        e.preventDefault();
+  $dropzone.addEventListener('drop', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
 
-        let databaseFile = e.dataTransfer.files[0];
-        uploadFile(databaseFile);
-    });
+    const databaseFile = e.dataTransfer.files[0];
+    uploadFile(databaseFile);
+  });
 }
-

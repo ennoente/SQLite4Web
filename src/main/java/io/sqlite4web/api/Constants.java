@@ -1,4 +1,4 @@
-package io.sqlite4web.sqlite4web.api;
+package io.sqlite4web.api;
 
 import java.io.File;
 

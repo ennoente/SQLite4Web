@@ -1,4 +1,4 @@
-package io.sqlite4web.sqlite4web.api;
+package io.sqlite4web.api;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.HttpHeaders;
@@ -19,7 +19,7 @@ public class DownloadController {
      * @param dbToken The database file's token
      * @return A 200 (OK) status code with the database file as attachment
      */
-    @RequestMapping(value = "/api/download")
+    @RequestMapping(method = RequestMethod.POST, value = "/api/download")
     public ResponseEntity<byte[]> returnDbFile(@RequestParam String dbToken) {
         File f;
         FileInputStream fis;

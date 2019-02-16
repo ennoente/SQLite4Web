@@ -1,12 +1,12 @@
-package io.sqlite4web.sqlite4web;
+package io.sqlite4web;
 
-import io.sqlite4web.sqlite4web.api.Constants;
+import io.sqlite4web.api.Constants;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("io.sqlite4web.sqlite4web.api")
+@ComponentScan("io.sqlite4web.api")
 @ComponentScan("config")
 @ComponentScan("io.sqlite4web")
 public class Sqlite4webApplication {

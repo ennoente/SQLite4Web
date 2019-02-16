@@ -4,5 +4,10 @@
     "env": {
         "browser": true,
         "jquery": true
-    }
+    },
+
+  "globals": {
+    "addCellManipulation": "readable",
+    "primaryKey": "writeable"
+  }
 }

@@ -1,8 +1,8 @@
-package io.sqlite4web.sqlite4web;
+package io.sqlite4web;
 
-import io.sqlite4web.sqlite4web.api.Constants;
+import io.sqlite4web.api.Constants;
+import io.swagger.annotations.Api;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,28 +16,42 @@ import java.sql.*;
 import java.util.Objects;
 import java.util.Random;
 
-@CrossOrigin(origins = "*")
-@RestController
-public class UploadController {
-    private final char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890".toCharArray();
 
+
+
+@RestController
+@Api(value = "Upload Database", description = "Upload an existing Database file to the Server", tags = { "Upload Database" })
+public class UploadController {
+
+
+    /** Used for generating unique tokens */
+    private final char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890".toCharArray();
     private Random random = new Random();
+
+
+    /** The JDBC connection to the database file. Different for each client */
     private Connection mConnection;
 
 
-    @CrossOrigin(origins = "*")
+
+    /**
+     * Returns the JSON representation of the associated file's contents.
+     * The token must be provided as it is the file's name in the server's
+     * file sysem.
+     *
+     * @param dbToken The database file's unique token
+     * @return The database file's contents, represented in JSON
+     */
     @RequestMapping(value = "/api", method = RequestMethod.GET)
     public String ui(@RequestParam String dbToken) {
         dbToken = dbToken.replace("dbToken=", "");
-        System.out.println("Received API call for '/api' with the dbToken '" + dbToken + "'");
-
-        String path = Constants.DATABASE_DIR + File.separator + dbToken;
-        return Objects.requireNonNull(constructJSON(path, dbToken)).toString();
+        return Objects.requireNonNull(constructJSON(dbToken)).toString();
     }
 
 
+
     /**
-     * POST /uploadFile -> receive and locally save a file, return JSON
+     * Generates a unique token for the database file and saves it locally.
      *
      * @param file The uploaded file as Multipart file parameter in the
      * HTTP request. The RequestParam name must be the same of the attribute
@@ -45,44 +59,47 @@ public class UploadController {
      *
      * @return The JSON parsed from the database file
      */
-    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/api/upload", method = RequestMethod.POST)
     @ResponseBody
-    public String uploadFile (
-            @RequestParam("file") MultipartFile file) {
-        System.out.println("Saving new database file");
-        System.out.println(file.getName());
-        System.out.println(file.getOriginalFilename());
+
+    public String uploadFile (@RequestParam("file") MultipartFile file) {
+        byte[] tokenBytes = new byte[8];
+
         String filename = file.getOriginalFilename();
         String dbToken;
-        try {
-            System.out.println(file.getBytes().length);
+        String path;
+        String fileExtension;
 
-            byte[] tokenBytes = new byte[8];
+        File dbFile;
+
+        try {
+            // Fill array with random bytes and create (unique) token from it
             random.nextBytes(tokenBytes);
             dbToken = DatatypeConverter.printHexBinary(tokenBytes);
-            System.out.println("New Token: '" + dbToken + "'");
 
-            String fileExtension = filename.substring(filename.lastIndexOf("."));
-
+            // Add the database's file extension to the token
+            fileExtension = filename.substring(filename.lastIndexOf("."));
             dbToken += fileExtension;
 
-            String path = Constants.DATABASE_DIR + File.separator + dbToken;
 
-            System.out.println(path);
-            File f = new File(path);
-            f.createNewFile();
+            // Create new file inside the database directory with the token as its name
+            path = Constants.DATABASE_DIR + File.separator + dbToken;
+            dbFile = new File(path);
+            dbFile.createNewFile();
 
-            BufferedOutputStream bufferedOut = new BufferedOutputStream(new FileOutputStream(f));
+            // Save the contents to the file
+            BufferedOutputStream bufferedOut = new BufferedOutputStream(new FileOutputStream(dbFile));
             bufferedOut.write(file.getBytes());
             bufferedOut.flush();
             bufferedOut.close();
             System.out.println("Finished saving the file");
 
+            // Return the token to the User
             JSONObject response = new JSONObject();
             response.put("dbToken", dbToken);
 
             return response.toString();
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -91,32 +108,13 @@ public class UploadController {
     }
 
 
+
     /**
-     * {
-     *     "metadata": {
-     *         "columnNames": [
-     *              "cname1",
-     *              "cname2"
-     *         ],
-     *         "primaryKey" : "key_value"
-     *     },
-     *     "data": [
-     *         [
-     *              "column1value",
-     *              "column2value"
-     *         ],
-     *         [
-     *              "column1value2",
-     *              "column2value2"
-     *         ]
-     *     ]
-     * }
+     * Constructs a JSON Object from
      *
-     *
-     * @param path The DB file's path
      * @return The JSON containing metadata about and all data of the database file.
      */
-    private JSONObject constructJSON(String path, String dbToken) {
+    private JSONObject constructJSON(String dbToken) {
         JSONObject container = new JSONObject();
         JSONObject metaData = new JSONObject();
         JSONArray columnNames = new JSONArray();
@@ -128,8 +126,11 @@ public class UploadController {
         DatabaseMetaData dbMetaData;
         ResultSetMetaData tableMetaData;
 
+        String path = Constants.DATABASE_DIR + File.separator + dbToken;
+        String jdbcURL = "jdbc:sqlite:" + path;
+
         try {
-            mConnection = DriverManager.getConnection("jdbc:sqlite:" + path);
+            mConnection = DriverManager.getConnection(jdbcURL);
 
             tableData = mConnection.createStatement().executeQuery("SELECT * FROM " + getDatabaseTableName());
 
@@ -144,7 +145,6 @@ public class UploadController {
 
             while (tableData.next()) {
                 row = convertResultSetToJSON(tableData, tableMetaData);
-                //System.out.println(tableData.getString(1));
                 table.put(row);
             }
 
@@ -170,6 +170,16 @@ public class UploadController {
         }
     }
 
+
+
+    /**
+     * Converts the passed ResultSet into a JSON Object
+     *
+     *
+     * @param rs The ResultSet containing the database file's content
+     * @param md The ResultSetMetaData, used for identifying the datatype of any given column
+     * @return The JSON representation of the database's table
+     */
     private JSONArray convertResultSetToJSON(ResultSet rs, ResultSetMetaData md) {
         JSONArray row = new JSONArray();
 
@@ -213,10 +223,13 @@ public class UploadController {
     }
 
 
-    public String getDatabaseTableName() {
-        try {
-            DatabaseMetaData databaseMetaData = mConnection.getMetaData();
 
+    /**
+     * Returns the database's (first(?)) table name
+     * @return The database file's first table name
+     */
+    private String getDatabaseTableName() {
+        try {
             DatabaseMetaData md = mConnection.getMetaData();
             ResultSet rs = md.getTables(null, null, "%", null);
             return rs.getString(3);
@@ -225,5 +238,4 @@ public class UploadController {
         }
         return null;
     }
-
 }

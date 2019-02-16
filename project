@@ -1,3 +1,11 @@
+SQLite4Web's purpose:
+	- Quick setup for database development -> browser tab can simply be refreshed to see changes
+		- While developing, direct SQL commands to SQLite4Web.
+		- When finished with feature, redirect commands to local database.
+	- Existing database files can quickly be shown. Found some old database file lying around your storage system? Upload it and find out whats in it!
+	- Can be used for table management
+
+
 1.0. Read table
     - Upload table to server
     - table is shown in UI as HTML table
