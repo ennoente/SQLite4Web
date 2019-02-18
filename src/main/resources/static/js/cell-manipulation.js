@@ -134,10 +134,6 @@ function updateCell() {
 
   console.log(requestBody);
 
-  // if (primaryKey != null) {
-  //    url += "?primaryKey=" + primaryKey;
-  // }
-
   request.open('POST', '/api/update/cell');
 
   request.onload = function () {
@@ -148,17 +144,13 @@ function updateCell() {
     console.log('oh-oh! :S');
   };
 
-  const _requestbody = JSON.stringify(requestBody);
-
-  console.log(`REQUEST BODY: ${_requestbody}`);
-
 
   $.ajax({
     url: '/api/update/cell',
     type: 'POST',
     contentType: 'application/json',
-    data: _requestbody,
     dataType: 'json',
+    data: JSON.stringify(requestBody),
     error(xhr, status, error) {
       console.log(`Error, status=${status}; error=${error}`);
       console.log(xhr.status);

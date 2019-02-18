@@ -1,4 +1,4 @@
-package io.sqlite4web;
+package io.sqlite4web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

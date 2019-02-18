@@ -1,112 +1,78 @@
-package io.sqlite4web;
+package io.sqlite4web.api.impl;
 
+import io.sqlite4web.api.BaseApi;
 import io.sqlite4web.api.Constants;
-import io.swagger.annotations.Api;
+import io.sqlite4web.api.util.UploadUtil;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.xml.bind.DatatypeConverter;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Objects;
 import java.util.Random;
 
+@Component
+public class BaseApiImpl implements BaseApi {
 
-
-
-@RestController
-@Api(value = "Upload Database", description = "Upload an existing Database file to the Server", tags = { "Upload Database" })
-public class UploadController {
-
-
-    /** Used for generating unique tokens */
-    private final char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890".toCharArray();
-    private Random random = new Random();
-
-
-    /** The JDBC connection to the database file. Different for each client */
     private Connection mConnection;
 
-
-
-    /**
-     * Returns the JSON representation of the associated file's contents.
-     * The token must be provided as it is the file's name in the server's
-     * file sysem.
-     *
-     * @param dbToken The database file's unique token
-     * @return The database file's contents, represented in JSON
-     */
-    @RequestMapping(value = "/api", method = RequestMethod.GET)
-    public String ui(@RequestParam String dbToken) {
+    @Override
+    public String handleJsonRepresentation(String dbToken) {
         dbToken = dbToken.replace("dbToken=", "");
         return Objects.requireNonNull(constructJSON(dbToken)).toString();
     }
 
+    @Override
+    public ResponseEntity handleDbFileUpload(MultipartFile file) throws IOException {
+        boolean fileSuccessfullySaved;
 
+        String dbToken = generateToken();
+        dbToken = UploadUtil.addFileExtension(file.getOriginalFilename(), dbToken);
 
-    /**
-     * Generates a unique token for the database file and saves it locally.
-     *
-     * @param file The uploaded file as Multipart file parameter in the
-     * HTTP request. The RequestParam name must be the same of the attribute
-     * "name" in the input tag with type file.
-     *
-     * @return The JSON parsed from the database file
-     */
-    @RequestMapping(value = "/api/upload", method = RequestMethod.POST)
-    @ResponseBody
+        fileSuccessfullySaved = UploadUtil.saveDbFile(dbToken, file.getBytes());
 
-    public String uploadFile (@RequestParam("file") MultipartFile file) {
-        byte[] tokenBytes = new byte[8];
-
-        String filename = file.getOriginalFilename();
-        String dbToken;
-        String path;
-        String fileExtension;
-
-        File dbFile;
-
-        try {
-            // Fill array with random bytes and create (unique) token from it
-            random.nextBytes(tokenBytes);
-            dbToken = DatatypeConverter.printHexBinary(tokenBytes);
-
-            // Add the database's file extension to the token
-            fileExtension = filename.substring(filename.lastIndexOf("."));
-            dbToken += fileExtension;
-
-
-            // Create new file inside the database directory with the token as its name
-            path = Constants.DATABASE_DIR + File.separator + dbToken;
-            dbFile = new File(path);
-            dbFile.createNewFile();
-
-            // Save the contents to the file
-            BufferedOutputStream bufferedOut = new BufferedOutputStream(new FileOutputStream(dbFile));
-            bufferedOut.write(file.getBytes());
-            bufferedOut.flush();
-            bufferedOut.close();
-            System.out.println("Finished saving the file");
-
+        if (fileSuccessfullySaved) {
             // Return the token to the User
             JSONObject response = new JSONObject();
             response.put("dbToken", dbToken);
 
-            return response.toString();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Bad Request" + File.separator + e.toString();
+            return ResponseEntity.status(200).body(response.toString());
+        } else {
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
+    @Override
+    public ResponseEntity<byte[]> handleDbFileDownload(String dbToken) {
+        File f;
+        FileInputStream fis;
+        byte[] fileBytes;
+
+        try {
+            dbToken = dbToken.replace("dbToken=", "");
+
+            f = new File(Constants.DATABASE_DIR + File.separator + dbToken);
+            fis = new FileInputStream(f);
+            fileBytes = new byte[(int) f.length()];
+
+            IOUtils.readFully(fis, fileBytes);
+        } catch (IOException ioException) {
+            return ResponseEntity.badRequest().body("No database with this token found".getBytes());
+        }
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbToken + "\"")
+                .body(fileBytes);
+    }
 
 
     /**
@@ -168,6 +134,24 @@ public class UploadController {
             e.printStackTrace();
             return null;
         }
+    }
+
+
+
+
+
+    /**
+     * Generates a random token that is going to become the newly uploaded
+     * database file's name.
+     *
+     * @return The generated, random token
+     */
+    private String generateToken() {
+        byte[] tokenBytes = new byte[8];
+
+        // Fill array with random bytes and create (unique) token from it
+        new Random().nextBytes(tokenBytes);
+        return DatatypeConverter.printHexBinary(tokenBytes);
     }
 
 

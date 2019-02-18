@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("io.sqlite4web.api")
-@ComponentScan("config")
+@ComponentScan("io.sqlite4web.config")
 @ComponentScan("io.sqlite4web")
 public class Sqlite4webApplication {
 
