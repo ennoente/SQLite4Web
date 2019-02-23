@@ -33,3 +33,7 @@
 
 #Log files
 *.log
+
+application.properties
+
+

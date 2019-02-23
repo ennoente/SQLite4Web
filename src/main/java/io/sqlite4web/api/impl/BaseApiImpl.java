@@ -23,13 +23,16 @@ import java.util.Random;
 @Component
 public class BaseApiImpl implements BaseApi {
 
+
     private Connection mConnection;
+
 
     @Override
     public String handleJsonRepresentation(String dbToken) {
         dbToken = dbToken.replace("dbToken=", "");
         return Objects.requireNonNull(constructJSON(dbToken)).toString();
     }
+
 
     @Override
     public ResponseEntity handleDbFileUpload(MultipartFile file) throws IOException {
@@ -50,6 +53,7 @@ public class BaseApiImpl implements BaseApi {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
     @Override
     public ResponseEntity<byte[]> handleDbFileDownload(String dbToken) {

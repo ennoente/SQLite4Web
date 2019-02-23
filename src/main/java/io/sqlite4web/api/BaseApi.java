@@ -18,7 +18,7 @@ public interface BaseApi {
     String handleJsonRepresentation(
             @ApiParam(value = "The database file's unique identifier", required = true, example = "0CDBD356D78F9066.txt")
             @RequestParam String dbToken);
-    
+
 
     @RequestMapping(value = "/api/upload", method = RequestMethod.POST)
     @ResponseBody
