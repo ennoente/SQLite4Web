@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -155,7 +154,7 @@ public class BaseApiImpl implements BaseApi {
 
         // Fill array with random bytes and create (unique) token from it
         new Random().nextBytes(tokenBytes);
-        return DatatypeConverter.printHexBinary(tokenBytes);
+        return bytesToHex(tokenBytes);
     }
 
 
@@ -225,5 +224,17 @@ public class BaseApiImpl implements BaseApi {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
+    public static String bytesToHex(byte[] bytes) {
+        char[] hexChars = new char[bytes.length * 2];
+        for ( int j = 0; j < bytes.length; j++ ) {
+            int v = bytes[j] & 0xFF;
+            hexChars[j * 2] = hexArray[v >>> 4];
+            hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+        }
+        return new String(hexChars);
     }
 }
