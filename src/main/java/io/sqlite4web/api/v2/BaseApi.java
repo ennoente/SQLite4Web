@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public interface BaseApi {
 
-    @RequestMapping(value = "/db/{dbToken}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/v2/db/{dbToken}", method = RequestMethod.GET)
     String v2HandleJsonRepresentation(@PathVariable("dbToken") String dbToken);
 }

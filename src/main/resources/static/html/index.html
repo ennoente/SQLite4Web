@@ -51,22 +51,39 @@
 
 <!-- If the URL parameter 'dbToken' is not null nor undefined the script requests the DB JSON for the appropriate DB file -->
 <script>
-    let param = window.location.search.substring(1);
+    let dbToken = window.location.search.substring(1);
 
-    console.log("param: '" + param + "'");
-    if (param !== '' && param !== 'undefined') {
+    console.log("param: '" + dbToken + "'");
+    if (dbToken !== '' && dbToken !== 'undefined') {
         // Remove drag and drop container
         $('#dropContainer').remove();
 
-        console.log("param value: '" + param.split("=")[1] + "'");
+        console.log("param value: '" + dbToken.split("=")[1] + "'");
 
-        $.get("/api?dbToken=" + param, function (data, status) {
+        $.get("/api?dbToken=" + dbToken, function (data, status) {
             if (status === "success") {
                 let uploadResponse = JSON.parse(data);
                 $('#download').attr('disabled', false);
                 retrieveResponseAndBuildTable(uploadResponse);
             }
         });
+    } else {
+        let dbUrlIndex = window.location.search.indexOf("/db/");
+        if (dbUrlIndex !==-1) {
+            let lastIndexOfUrl = dbUrlIndex + "/db/".length;
+            dbToken = window.location.search.substr(0, lastIndexOfUrl);
+
+            console.log("New API: /db/" + dbToken + ". Correct?");
+
+            // Web-Interface v2?
+            $.get("api/v2/db/" + dbToken, function(data, status) {
+                if (status === "success") {
+                    let uploadResponse = JSON.parse(data);
+                    $('#download').attr('disabled', false);
+                    retrieveResponseAndBuildTable(uploadResponse);
+                }
+            });
+        }
     }
 </script>
 
