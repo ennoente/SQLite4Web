@@ -20,10 +20,16 @@ import java.util.Objects;
 import java.util.Random;
 
 @Component
-public class BaseApiImpl implements BaseApi {
+public class BaseApiImpl implements BaseApi, io.sqlite4web.api.v2.BaseApi {
 
 
     private Connection mConnection;
+
+
+    @Override
+    public String v2HandleJsonRepresentation(String dbToken) {
+        return handleJsonRepresentation(dbToken);
+    }
 
 
     @Override
@@ -38,7 +44,7 @@ public class BaseApiImpl implements BaseApi {
         boolean fileSuccessfullySaved;
 
         String dbToken = generateToken();
-        dbToken = UploadUtil.addFileExtension(file.getOriginalFilename(), dbToken);
+        dbToken = UploadUtil.addFileExtension(Objects.requireNonNull(file.getOriginalFilename()), dbToken);
 
         fileSuccessfullySaved = UploadUtil.saveDbFile(dbToken, file.getBytes());
 
@@ -227,8 +233,8 @@ public class BaseApiImpl implements BaseApi {
     }
 
 
-    private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
-    public static String bytesToHex(byte[] bytes) {
+    private static final char[] hexArray = "0123456789ABCDEF".toCharArray();
+    private static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
         for ( int j = 0; j < bytes.length; j++ ) {
             int v = bytes[j] & 0xFF;
