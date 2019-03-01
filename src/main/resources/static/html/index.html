@@ -53,9 +53,8 @@
 <script>
     dbToken = window.location.search.substring(1);
 
-    alert("dbToken = '" + dbToken + "'");
-
     console.log("param: '" + dbToken + "'");
+
     if (dbToken !== '' && dbToken !== 'undefined') {
         // Remove drag and drop container
         $('#dropContainer').remove();
@@ -70,15 +69,16 @@
             }
         });
     } else {
-        let dbUrlIndex = window.location.search.indexOf("/db/");
+        let dbUrlIndex = window.location.href.indexOf("/db/");
+
         if (dbUrlIndex !== -1) {
             let lastIndexOfUrl = dbUrlIndex + "/db/".length;
-            dbToken = window.location.search.substr(0, lastIndexOfUrl);
+            dbToken = window.location.href.substring(lastIndexOfUrl, window.location.href.length);
 
-            console.log("New API: /db/" + dbToken + ". Correct?");
+            $('#dropContainer').remove();
 
             // Web-Interface v2?
-            $.get("api/v2/db/" + dbToken, function(data, status) {
+            $.get("/api/v2/db/" + dbToken, function(data, status) {
                 if (status === "success") {
                     let uploadResponse = JSON.parse(data);
                     $('#download').attr('disabled', false);
