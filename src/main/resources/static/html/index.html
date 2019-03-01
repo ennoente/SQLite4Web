@@ -53,6 +53,8 @@
 <script>
     let dbToken = window.location.search.substring(1);
 
+    alert("dbToken = '" + dbToken + "'");
+
     console.log("param: '" + dbToken + "'");
     if (dbToken !== '' && dbToken !== 'undefined') {
         // Remove drag and drop container
@@ -69,7 +71,7 @@
         });
     } else {
         let dbUrlIndex = window.location.search.indexOf("/db/");
-        if (dbUrlIndex !==-1) {
+        if (dbUrlIndex !== -1) {
             let lastIndexOfUrl = dbUrlIndex + "/db/".length;
             dbToken = window.location.search.substr(0, lastIndexOfUrl);
 
