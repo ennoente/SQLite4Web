@@ -38,23 +38,7 @@ public class WebConfig implements WebMvcConfigurer {
             }
         };
 
-        tomcat.addAdditionalTomcatConnectors(redirectConnector());
         return tomcat;
-    }
-
-
-    /**
-     * Redirects from port 80 (HTTP) to port 443 (HTTPS) on the same server
-     *
-     * @return Connector object redirecting from HTTP to HTTPS
-     */
-    private Connector redirectConnector() {
-        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
-        connector.setScheme("http");
-        connector.setPort(80);
-        connector.setSecure(false);
-        connector.setRedirectPort(443);
-        return connector;
     }
 
 
